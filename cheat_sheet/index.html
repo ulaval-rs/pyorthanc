@@ -1,0 +1,2640 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="PyOrthanc library">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../tutorial/quickstart/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Cheat sheet - PyOrthanc</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cheat-sheet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PyOrthanc" class="md-header__button md-logo" aria-label="PyOrthanc" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PyOrthanc
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cheat sheet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gacou54/pyorthanc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gacou54/pyorthanc
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PyOrthanc" class="md-nav__button md-logo" aria-label="PyOrthanc" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    PyOrthanc
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gacou54/pyorthanc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gacou54/pyorthanc
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cheat sheet
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Usage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Usage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Api Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Api Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orthanc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/async_client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Asynchronous Orthanc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/orthanc_sdk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orthanc SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/resources/patient/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Patient
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/resources/study/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Study
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/resources/series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Series
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/resources/instance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/find/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Find
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/filtering/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Filtering
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/modality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modality
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/jobs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/resources/resource/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/retrieve/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Retrieve
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../releases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    More information
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            More information
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Issues and contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contacts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contacts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../citation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Citation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="cheat-sheet">Cheat sheet</h1>
+<p><a href="https://www.orthanc-server.com/">Orthanc</a> has a very useful
+<a href="https://orthanc.uclouvain.be/book/users/rest-cheatsheet.html">cheat sheet</a> for finding functionalities and REST API routes. 
+This page contains the mappings between REST API paths and methods in the <code>pyorthanc.Orthanc</code> class.</p>
+<p>Note that <code>pyorthanc.Orthanc</code> is the low level client with which users can interact with Orthanc. Higher level functionalities
+such as <a href="../api/resources/patient/">Patient</a>, <a href="../api/resources/study/">Study</a>, <a href="../api/resources/series/">Series</a>, 
+<a href="../api/resources/instance/">Instance</a>, <a href="../api/find/">find_patients/studies/series/instances</a>, or <a href="../api/modality/">Modality</a>
+might be more convenient to use.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Path</th>
+<th style="text-align: left;">GET</th>
+<th style="text-align: left;">POST</th>
+<th style="text-align: left;">DELETE</th>
+<th style="text-align: left;">PUT</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>/changes</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_changes">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_changes">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List changes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/exports</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_exports">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_exports">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List exports</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_instances">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List the available instances</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_instances_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get information about some instance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/anonymize</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_instances_id_anonymize">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Anonymize instance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_attachments">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List attachments</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_attachments_name">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_instances_id_attachments_name">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_instances_id_attachments_name">here</a></td>
+<td style="text-align: left;">List operations on attachments</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}/compress</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_instances_id_attachments_name_compress">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Compress attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}/compressed-data</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_attachments_name_compressed_data">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}/compressed-md5</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_attachments_name_compressed_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get MD5 of attachment on disk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}/compressed-size</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_attachments_name_compressed_size">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get size of attachment on disk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}/data</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_attachments_name_data">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}/info</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_attachments_name_info">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get info about the attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}/is-compressed</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_attachments_name_is_compressed">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Is attachment compressed?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}/md5</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_attachments_name_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get MD5 of attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}/size</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_attachments_name_size">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get size of attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}/uncompress</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_instances_id_attachments_name_uncompress">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Uncompress attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/attachments/{name}/verify-md5</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_instances_id_attachments_name_verify_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Verify attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/content/{path}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_content_path">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get raw tag</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/export</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_instances_id_export">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Write DICOM onto filesystem</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/file</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_file">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Download DICOM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/frames</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_frames">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List available frames</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/frames/{frame}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_frames_frame">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List operations</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/frames/{frame}/image-int16</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_frames_frame_image_int16">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode a frame</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/frames/{frame}/image-uint16</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_frames_frame_image_uint16">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode a frame</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/frames/{frame}/image-uint8</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_frames_frame_image_uint8">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode a frame</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/frames/{frame}/matlab</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_frames_frame_matlab">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode frame for Matlab</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/frames/{frame}/numpy</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_frames_frame_numpy">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode frame for numpy</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/frames/{frame}/preview</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_frames_frame_preview">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode a frame</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/frames/{frame}/raw</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_frames_frame_raw">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Access raw frame</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/frames/{frame}/raw.gz</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_frames_frame_raw_gz">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Access raw frame</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/frames/{frame}/rendered</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_frames_frame_rendered">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Render a frame</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/header</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_header">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get DICOM meta-header</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/image-int16</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_image_int16">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode an image</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/image-uint16</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_image_uint16">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode an image</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/image-uint8</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_image_uint8">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode an image</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/labels</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_labels">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List labels</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/labels/{label}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_labels_label">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_instances_id_labels_label">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_instances_id_labels_label">here</a></td>
+<td style="text-align: left;">Test label</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/matlab</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_matlab">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode frame for Matlab</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/metadata</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_metadata">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List metadata</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/metadata/{name}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_metadata_name">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_instances_id_metadata_name">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_instances_id_metadata_name">here</a></td>
+<td style="text-align: left;">Get metadata</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/modify</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_instances_id_modify">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Modify instance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/module</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_module">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get instance module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/numpy</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_numpy">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode instance for numpy</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/patient</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_patient">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get parent patient</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/pdf</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_pdf">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get embedded PDF</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/preview</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_preview">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Decode an image</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/reconstruct</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_instances_id_reconstruct">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Reconstruct tags &amp; optionally files of instance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/rendered</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_rendered">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Render an image</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/series</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_series">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get parent series</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/simplified-tags</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_simplified_tags">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get human-readable tags</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/statistics</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_statistics">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get instance statistics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/study</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_study">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get parent study</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/instances/{id}/tags</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_instances_id_tags">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get DICOM tags</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/jobs</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_jobs">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List jobs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/jobs/{id}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_jobs_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_jobs_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get job</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/jobs/{id}/cancel</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_jobs_id_cancel">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Cancel job</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/jobs/{id}/pause</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_jobs_id_pause">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Pause job</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/jobs/{id}/resubmit</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_jobs_id_resubmit">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Resubmit job</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/jobs/{id}/resume</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_jobs_id_resume">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Resume job</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/jobs/{id}/{key}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_jobs_id_key">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_jobs_id_key">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get job output</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_modalities">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List DICOM modalities</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_modalities">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_modalities_id">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_modalities_id">here</a></td>
+<td style="text-align: left;">List operations on modality</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/configuration</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_modalities_id_configuration">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get modality configuration</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/echo</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_echo">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Trigger C-ECHO SCU</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/find</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_find">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Hierarchical C-FIND SCU</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/find-instance</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_find_instance">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">C-FIND SCU for instances</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/find-patient</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_find_patient">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">C-FIND SCU for patients</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/find-series</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_find_series">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">C-FIND SCU for series</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/find-study</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_find_study">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">C-FIND SCU for studies</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/find-worklist</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_find_worklist">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">C-FIND SCU for worklist</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/move</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_move">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Trigger C-MOVE SCU</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/query</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_query">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Trigger C-FIND SCU</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/storage-commitment</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_storage_commitment">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Trigger storage commitment request</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/store</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_store">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Trigger C-STORE SCU</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/modalities/{id}/store-straight</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_modalities_id_store_straight">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Straight C-STORE SCU</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List the available patients</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_patients_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get information about some patient</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/anonymize</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_patients_id_anonymize">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Anonymize patient</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/archive</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_archive">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_patients_id_archive">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Create ZIP archive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_attachments">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List attachments</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_attachments_name">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_patients_id_attachments_name">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_patients_id_attachments_name">here</a></td>
+<td style="text-align: left;">List operations on attachments</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}/compress</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_patients_id_attachments_name_compress">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Compress attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}/compressed-data</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_attachments_name_compressed_data">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}/compressed-md5</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_attachments_name_compressed_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get MD5 of attachment on disk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}/compressed-size</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_attachments_name_compressed_size">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get size of attachment on disk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}/data</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_attachments_name_data">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}/info</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_attachments_name_info">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get info about the attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}/is-compressed</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_attachments_name_is_compressed">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Is attachment compressed?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}/md5</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_attachments_name_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get MD5 of attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}/size</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_attachments_name_size">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get size of attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}/uncompress</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_patients_id_attachments_name_uncompress">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Uncompress attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/attachments/{name}/verify-md5</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_patients_id_attachments_name_verify_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Verify attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/instances</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_instances">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get child instances</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/instances-tags</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_instances_tags">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get tags of instances</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/labels</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_labels">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List labels</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/labels/{label}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_labels_label">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_patients_id_labels_label">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_patients_id_labels_label">here</a></td>
+<td style="text-align: left;">Test label</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/media</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_media">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_patients_id_media">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Create DICOMDIR media</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/metadata</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_metadata">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List metadata</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/metadata/{name}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_metadata_name">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_patients_id_metadata_name">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_patients_id_metadata_name">here</a></td>
+<td style="text-align: left;">Get metadata</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/modify</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_patients_id_modify">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Modify patient</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/module</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_module">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get patient module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/protected</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_protected">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_patients_id_protected">here</a></td>
+<td style="text-align: left;">Is the patient protected against recycling?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/reconstruct</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_patients_id_reconstruct">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Reconstruct tags &amp; optionally files of patient</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/series</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_series">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get child series</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/shared-tags</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_shared_tags">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get shared tags</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/statistics</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_statistics">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get patient statistics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/patients/{id}/studies</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_patients_id_studies">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get child studies</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/peers</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_peers">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List Orthanc peers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/peers/{id}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_peers_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_peers_id">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_peers_id">here</a></td>
+<td style="text-align: left;">List operations on peer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/peers/{id}/configuration</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_peers_id_configuration">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get peer configuration</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/peers/{id}/store</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_peers_id_store">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Send to Orthanc peer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/peers/{id}/store-straight</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_peers_id_store_straight">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Straight store to peer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/peers/{id}/system</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_peers_id_system">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get peer system information</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/plugins</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_plugins">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List plugins</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/plugins/explorer.js</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_plugins_explorer_js">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">JavaScript extensions to Orthanc Explorer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/plugins/{id}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_plugins_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get plugin</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/queries</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_queries">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List query/retrieve operations</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/queries/{id}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_queries">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_queries_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List operations on a query</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/queries/{id}/answers</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_queries_id_answers">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List answers to a query</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/queries/{id}/answers/{index}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_queries_id_answers_index">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List operations on an answer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/queries/{id}/answers/{index}/content</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_queries_id_answers_index_content">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get answer content</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/queries/{id}/answers/{index}/retrieve</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_queries_id_answers_index_retrieve">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Retrieve answer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/queries/{id}/level</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_queries_id_level">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get query level</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/queries/{id}/modality</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_queries_id_modality">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get query modality</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/queries/{id}/query</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_queries_id_query">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get query arguments</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/queries/{id}/retrieve</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_queries_id_retrieve">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Retrieve all answers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List the available series</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_series_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get information about series</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/anonymize</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_series_id_anonymize">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Anonymize series</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/archive</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_archive">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_series_id_archive">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Create ZIP archive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_attachments">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List attachments</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_attachments_name">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_series_id_attachments_name">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_series_id_attachments_name">here</a></td>
+<td style="text-align: left;">List operations on attachments</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}/compress</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_series_id_attachments_name_compress">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Compress attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}/compressed-data</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_attachments_name_compressed_data">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}/compressed-md5</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_attachments_name_compressed_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get MD5 of attachment on disk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}/compressed-size</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_attachments_name_compressed_size">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get size of attachment on disk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}/data</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_attachments_name_data">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}/info</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_attachments_name_info">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get info about attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}/is-compressed</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_attachments_name_is_compressed">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Is attachment compressed?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}/md5</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_attachments_name_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get MD5 of attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}/size</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_attachments_name_size">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get size of attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}/uncompress</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_series_id_attachments_name_uncompress">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Uncompress attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/attachments/{name}/verify-md5</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_series_id_attachments_name_verify_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Verify attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/instances</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_instances">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get child instances</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/instances-tags</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_instances_tags">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get tags of instances</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/labels</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_labels">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List labels</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/labels/{label}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_labels_label">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_series_id_labels_label">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_series_id_labels_label">here</a></td>
+<td style="text-align: left;">Test label</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/media</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_media">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_series_id_media">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Create DICOMDIR media</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/metadata</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_metadata">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List metadata</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/metadata/{name}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_metadata_name">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_series_id_metadata_name">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_series_id_metadata_name">here</a></td>
+<td style="text-align: left;">Get metadata</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/modify</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_series_id_modify">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Modify series</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/module</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_module">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get series module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/ordered-sliced</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_ordered_slices">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Order slices</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/patient</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_patient">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get parent patient</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/reconstruct</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_series_id_reconstruct">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Reconstruct tags &amp; optionally files</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/shared-tags</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_shared_tags">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get shared tags</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/statistics</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_statistics">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get series statistics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/series/{id}/study</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_series_id_study">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get parent study</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/statistics</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_statistics">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get database statistics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List available studies</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_studies_id">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get information about study</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/anonymize</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_studies_id_anonymize">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Anonymize study</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/archive</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_archive">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_studies_id_archive">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Create ZIP archive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_attachments">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List attachments</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_attachments_name">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_studies_id_attachments_name">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_studies_id_attachments_name">here</a></td>
+<td style="text-align: left;">List operations on attachments</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}/compress</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_studies_id_attachments_name_compress">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Compress attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}/compressed-data</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_attachments_name_compressed_data">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}/compressed-md5</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_attachments_name_compressed_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get MD5 of attachment on disk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}/compressed-size</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_attachments_name_compressed_size">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get size of attachment on disk</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}/data</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_attachments_name_data">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}/info</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_attachments_name_info">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get info about attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}/is-compressed</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_attachments_name_is_compressed">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Is attachment compressed?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}/md5</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_attachments_name_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get MD5 of attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}/size</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_attachments_name_size">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get size of attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}/uncompress</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_studies_id_attachments_name_uncompress">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Uncompress attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/attachments/{name}/verify-md5</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_studies_id_attachments_name_verify_md5">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Verify attachment</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/instances</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_instances">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get child instances</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/instances-tags</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_instances_tags">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get tags of instances</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/labels</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_labels">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List labels</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/labels/{label}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_labels_label">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_studies_id_labels_label">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_studies_id_labels_label">here</a></td>
+<td style="text-align: left;">Test label</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/media</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_media">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_studies_id_media">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Create DICOMDIR media</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/metadata</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_metadata">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">List metadata</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/metadata/{name}</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_metadata_name">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.delete_studies_id_metadata_name">here</a></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_studies_id_metadata_name">here</a></td>
+<td style="text-align: left;">Get metadata</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/modify</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_studies_id_modify">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Modify study</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/module</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_module">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get study module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/module-patient</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_module_patient">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get patient module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/patient</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_patient">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get parent patient</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/reconstruct</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_studies_id_reconstruct">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Reconstruct tags &amp; optionally files</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/series</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_series">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get child series</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/shared-tags</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_shared_tags">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get shared tags</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/studies/{id}/statistics</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_studies_id_statistics">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get study statistics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/system</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_system">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get system information</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/accepted-transfer-syntaxes</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_tools_accepted_transfer_syntaxes">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_tools_accepted_transfer_syntaxes">here</a></td>
+<td style="text-align: left;">Get/set accepted transfer syntaxes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/bulk-content</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_bulk_content">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Bulk content modifications</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/bulk-delete</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_bulk_delete">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Bulk delete</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/bulk-modify</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_bulk_modify">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Bulk modifications</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/create-archive</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_create_archive">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Create ZIP archive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/create-dicom</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_create_dicom">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Create one DICOM instance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/create-media</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_create_media">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Create DICOMDIR media</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/default-encoding</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_tools_default_encoding">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_tools_default_encoding">here</a></td>
+<td style="text-align: left;">Get/set default encoding</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/dicom-conformance</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_tools_dicom_conformance">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get DICOM conformance statement</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/execute-script</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_execute_script">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Execute Lua script</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/find</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_find">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Look for local resources</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/generate-uid</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_tools_generate_uid">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Generate DICOM UID</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/lookup</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_lookup">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Look for DICOM identifiers</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/metrics</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_tools_metrics">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get real-time metrics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/metrics-prometheus</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_tools_metrics_prometheus">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get metrics for Prometheus</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/now</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_tools_now">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Get UTC time</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/reconstruct</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_reconstruct">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Reconstruct database</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/reset</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_reset">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Reset Orthanc</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/shutdown</code></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.post_tools_shutdown">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Shutdown Orthanc</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>/tools/unknown-sop-class-accepted</code></td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.get_tools_unknown_sop_class_accepted">here</a></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><a href="../api/client/#pyorthanc.Orthanc.put_tools_unknown_sop_class_accepted">here</a></td>
+<td style="text-align: left;">Get/set unknown SOP class acceptance</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "content.code.copy", "content.code.select"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+    
+  </body>
+</html>
